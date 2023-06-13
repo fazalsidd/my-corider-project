@@ -1,173 +1,162 @@
-body {
-  background-color: #282c34;
-  color: black;
-  overflow-x: hidden;
-}
-* {
-  color: black;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  text-align: center;
-  max-width: 728px;
-  width: 728px;
-  margin: 0 auto;
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f8f3;
   display: flex;
   flex-direction: column;
+  border-radius: 3.2rem;
 }
 
-.App header {
-  background-color: #f7f3f3;
-  box-shadow: 0px 2px 8px rgba(143, 143, 143, 0.271);
-  position: fixed;
-  width: 100%;
-  max-width: 728px;
-  top: 0;
-  z-index: 99;
+.app header {
   box-sizing: border-box;
+  height: 15vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.0799999982);
 }
 
-.App section {
+.app header .description {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
-main {
-  padding: 10px;
-  /* height: 80vh; */
-  padding-top: 150px;
-  max-width: 728px;
-  background-color: #f9f6ee;
-  padding-bottom: 60px;
+.app section {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
   overflow-y: scroll;
+  row-gap: 2rem;
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-main::-webkit-scrollbar {
+section::-webkit-scrollbar {
   display: none;
 }
 
-form {
-  margin: 10px 20px;
-  border-radius: 30px;
-  box-shadow: 0px 2px 8px rgba(143, 143, 143, 0.271);
-  position: fixed;
-  bottom: 0;
-  background: white;
+.app section .message {
+  margin-right: 4rem;
+  margin-bottom: 2rem;
   width: 100%;
-  max-width: 688px;
+  height: auto;
   display: flex;
-}
-
-form button {
-  width: 20%;
-  background-color: rgb(240, 240, 245);
-}
-
-input {
-  line-height: 1.5;
-  width: 100%;
-  font-size: 1rem;
-  background: inherit;
-  color: rgb(26, 24, 24);
-  outline: none;
-  border: none;
-  border-radius: 25px;
-  padding: 0 10px;
-}
-
-button {
-  background-color: #282c34; /* Green */
-  border-radius: 25px;
-  border: none;
-  color: rgb(38, 29, 29);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 1.25rem;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.sign-in {
-  color: #282c34;
-  background: white;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-h1 {
-  color: rgb(14, 8, 8);
-}
-
-ul,
-li {
-  text-align: left;
-  list-style: none;
-}
-
-p {
-  max-width: 500px;
-  margin-bottom: 12px;
-  line-height: 24px;
-  padding: 10px 20px;
-  border-radius: 0px 10px 10px 10px;
-  position: relative;
-  color: white;
-  text-align: center;
-}
-
-.message {
-  display: flex;
-  margin: 10px 0;
-  align-items: center;
   position: relative;
 }
 
-.sent {
+.app section .message .image img {
+  width: 2.4rem;
+  height: auto;
+  margin: 0 0.5rem;
+  /* position: absolute;
+  left: -2.8rem;
+  top: 0; */
+  z-index: 5;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 99.9rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.0799999982);
+}
+
+.app section .received .description {
+  box-sizing: border-box;
+  padding: 0.8rem 0.9rem 0.9rem 0.8rem;
+  max-width: 70vw;
+  width: auto;
+  height: auto;
+  z-index: 5;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.0799999982);
+  background-color: #ffffff;
+  border-radius: 0 1.2rem 1.2rem 1.2rem;
+  flex-shrink: 0;
+}
+
+.app section .recieve {
+  align-items: flex-start;
+  flex-shrink: 0;
+  width: calc(100% - 4rem);
+}
+
+.app section .sent {
   flex-direction: row-reverse;
+
+  .image {
+    margin-top: 1rem;
+  }
 }
 
-.sent p {
-  margin-right: 45px;
-  background: #0000ff;
-  border-radius: 10px 10px 0px 10px;
-  align-self: flex-end;
-}
-.received p {
-  margin-left: 45px;
-  background: white;
-  color: black;
+.app section .sent .description {
+  box-sizing: border-box;
+  padding: 0.8rem 0.7rem 0.9rem 0.8rem;
+  max-width: 20.7rem;
+  width: auto;
+  height: auto;
+  background-color: #1c63d5;
+  border-radius: 1.2rem 1.2rem 0 1.2rem;
 }
 
-.sent img {
-  width: 40px;
-  height: 40px;
+.app section .chatform {
+  width: 100vw;
+  height: 5rem;
   position: absolute;
+  left: 0;
   bottom: 0;
-  border-radius: 50%;
-}
-
-.received img {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 0;
-  border-radius: 50%;
-}
-
-.description {
+  z-index: 5;
+  background-color: #f9f8f3;
   display: flex;
-  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.0799999982);
+}
+
+.app section .chatform form {
+  width: 90%;
+  height: 70%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.0799999982);
+}
+
+.app section .chatform form input {
+  border: none;
+  outline: none;
+  height: inherit;
+  padding: 0.4rem 1rem;
+  flex-grow: 1;
+  font-size: inherit;
+  font-style: inherit;
+  border-radius: 0.5rem;
+}
+
+.app section .chatform form .formbutton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-around;
+  margin-right: 1rem;
+}
+
+.app section .chatform form .formbutton button {
+  border: none;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app section .chatform form .formbutton button:active {
+  border: none;
+  background-color: #ffffff;
 }

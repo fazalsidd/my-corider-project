@@ -27,6 +27,12 @@ const ChatArea = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   });
 
+  const [active, setActive] = useState(false);
+
+  function handleClick() {
+    setActive(!active);
+  }
+
   return (
     <>
       <main>
@@ -51,12 +57,13 @@ const ChatArea = () => {
             onChange={(e) => setFormValue(e.target.value)}
             placeholder="Type Here"
           />
-          <lable>
-            <InsertLinkOutlinedIcon />
-            <button type="submit" disabled={!formValue}>
-              <SendOutlinedIcon />
+          <div className="formbutton">
+            <InsertLinkOutlinedIcon sx={{ fontSize: 25 }} />
+
+            <button type="submit" disabled={!formValue} color="black">
+              <SendOutlinedIcon sx={{ fontSize: 25 }} />
             </button>
-          </lable>
+          </div>
         </form>
       </div>
     </>

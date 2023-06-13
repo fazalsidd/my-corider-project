@@ -5,6 +5,7 @@ import useFetch from "./hooks/useFetch";
 import LinearProgress from "@mui/material/LinearProgress";
 import Stack from "@mui/material/Stack";
 import ChatArea from "./chatArea/ChatArea";
+import "./index.css";
 function App() {
   let { isLoading } = useFetch("https://qa.corider.in/assignment/chat?page=0");
 
@@ -17,7 +18,7 @@ function App() {
       </Stack>
     );
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <section>
         <ChatArea />
