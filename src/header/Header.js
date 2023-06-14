@@ -1,11 +1,12 @@
 
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-
+import pic from "../assets/pic.jpg";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import useFetch from "../hooks/useFetch";
 
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import Avatar from "@mui/material/Avatar";
@@ -21,6 +22,9 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 
 export default function ProminentAppBar() {
+  let {data} = useFetch(
+    "https://qa.corider.in/assignment/chat?page=0"
+  );
   return (
     // <Box>
     // <AppBar position="static">
@@ -38,7 +42,7 @@ export default function ProminentAppBar() {
           </IconButton>
 
           <Typography variant="h5" component="span">
-            <b>Trip 1</b>
+            <b>Trip {data?.name.substring(data?.name.indexOf(".")+1,data?.name.length)}</b>
           </Typography>
         </div>
 
@@ -54,11 +58,11 @@ export default function ProminentAppBar() {
 
       <StyledToolbar>
         <div className="description">
-          <Avatar sx={{ fontSize: 25 }} />
+          <Avatar sx={{ fontSize: 25 }} src={pic} />
           <span>
-            From <b>IGI Airport, T3</b>
+            From <b>{data?.from}</b>
             <br />
-            To <b>Sector 28</b>
+            To <b>{data?.to}</b>
           </span>
         </div>
         <ThreeDot sx={{ fontSize: 25 }} />
